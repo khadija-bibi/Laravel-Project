@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\TodoList;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -62,8 +63,8 @@ class TodoListController extends Controller
         
 
     }
-    public function exportToDos(){
-        return Excel::download(new ToDoExport,'todos.xlsx');
+    public function exportToDos(User $user){
+        return Excel::download(new ToDoExport($user), 'todos.xlsx');
     }
     public function importToDos(Request $request){
 

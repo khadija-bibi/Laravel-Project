@@ -28,7 +28,7 @@ Route::post('/todo', [TodoListController::class,'store'])->name('store');
 Route::delete('/todo/{todolist:id}', [TodoListController::class,'destroy'])->name('destroy');
 Route::post('/todo/iscompleted/{todolist:id}',[TodoListController::class,'iscompleted']);
 Route::post('/todo/notcompleted/{todolist:id}',[TodoListController::class,'notcompleted']);
-Route::get('/exportToDos', [TodoListController::class,'exportToDos'])->name('exportToDos');
+Route::get('/exportToDos/{user}', [TodoListController::class, 'exportToDos'])->name('exportToDos');
 Route::post('/importToDos', [TodoListController::class,'importToDos'])->name('importToDos');
 
 // Route::put('/todo-list/{id}/status', [TodoListController::class,'updateStatus'])->name('updateStatus');
