@@ -67,7 +67,8 @@ class TodoListController extends Controller
     }
     public function importToDos(Request $request){
 
-       Excel::import(new ToDoImport,$request->file('file') );
+
+        Excel::import(new ToDoImport, request()->file('file'));
         return redirect('home')->with('flash_message', 'Member Added!');
     }
     

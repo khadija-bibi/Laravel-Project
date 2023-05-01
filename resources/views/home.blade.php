@@ -29,11 +29,11 @@
           <div>
             <a  class=" bg-blue-500 hover:bg-blue-700 text-white font-bold  rounded py-1 px-2" href="{{ route('exportToDos') }}" >Export</a>
           </div>
-          <form action=" {{ route('importToDos') }}" method="POST">
+          <form action=" {{ route('importToDos') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div>
               <button  type="submit" class=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded" >Import</button>
-              <input type="file">
+              <input type="file" name="file">
             </div>
             
           </form>
