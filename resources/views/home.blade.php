@@ -24,7 +24,7 @@
           <div class="flex space-x-4">
             <form method="POST" action="{{ route('logout') }}" role="button">
               @csrf
-              <a :href="route('logout')" class="nav-link text-white hover:bg-transparent hover:bg-cyan-700 hover:text-white" text-gray-300 onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
+              <a :href="route('logout')" class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
           </form>
           <div>
             <a  class=" bg-blue-500 hover:bg-blue-700 text-white font-bold  rounded py-1 px-2" href="{{ route('exportToDos', ['user' => Auth::id()]) }}" >Export</a>
